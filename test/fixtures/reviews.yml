@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reviewer: MyString
+  stud_email: MyString
+  prev_grader: false
+  grader_rating: 1
+  recommend: false
+  notes: MyString
+
+two:
+  reviewer: MyString
+  stud_email: MyString
+  prev_grader: false
+  grader_rating: 1
+  recommend: false
+  notes: MyString
