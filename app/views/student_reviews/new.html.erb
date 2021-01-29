@@ -1,0 +1,18 @@
+<h1>Submit a new review:</h1>
+
+<%= form_for @review do |f| %>
+  <%= f.hidden_field :reviewer, value: current_user.email%>
+  Student Email (lastname.#@osu.edu): <br>
+  <%= f.text_field :stud_email%>
+  <br>Was this student previously a grader?
+  <%= f.check_box :prev_grader%>
+  <br>If so, how would you rate them (1-10, 10 being the best)?
+  <%= f.select :grader_rating, (1..10) %>
+  <br>Do you recommend them?
+  <%= f.check_box :recommend%>
+  <br>Additional Notes: <br>
+  <%= f.text_area :notes%>
+  <%= f.submit%>
+<% end %>
+
+<br>

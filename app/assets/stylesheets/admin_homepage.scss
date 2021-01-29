@@ -1,0 +1,51 @@
+// Place all the styles related to the AdminHomepage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  padding: 0em 0em;
+  background-color: #eee;
+}
+
+.options {
+  margin: 0.05rem;
+}
+
+.options button {
+  background-color: #800;
+  color: #fff;
+  border: 1px solid black;
+  padding: 1rem;
+  display: block;
+  font-size: 1.5rem;
+  width: 40%;
+  margin: 0 auto;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition-duration: 0.4s;
+}
+
+.options button:hover, .options button:active {
+  background-color: #fe6;
+  border: 2px solid #800;
+  padding: 1.1rem;
+  width: 41%;
+  color: #000;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #a00;
+  font-family: garamond, arial, sans-serif;
+}
+
+h2, h3 {
+  color: #404040;
+  font-family: arial, sans-serif;
+  text-align: center;
+}
+
+.section_start {
+  font-size: 1.7rem;
+  margin-top: 2.8rem;
+}

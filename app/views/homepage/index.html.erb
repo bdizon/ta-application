@@ -1,0 +1,11 @@
+<h2>Department of Computer Science and Engineering</h2>
+<h2>TA & Grader Application System</h2>
+
+<div class = "button-group">
+  <button onclick = "window.location.href='users/sign_in.html'">Sign In</button>
+  <button onclick = "window.location.href='users/sign_up.html'">Sign Up</button>
+
+  <% if user_signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <% end %>
+</div>

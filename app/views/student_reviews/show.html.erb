@@ -1,0 +1,26 @@
+<h1> These are your submitted reviews: </h1>
+
+<% if !Review.all.empty? %>
+  <h2> Reviews Submitted By <%=current_user.email%></h2>
+  <table>
+    <tr>
+      <th>Student</th>
+      <th>Previously Grader?</th>
+      <th>Rating</th>
+      <th>Recommendation</th>
+      <th>Notes</th>
+    </tr>
+  <% Review.where(:reviewer.equal? current_user).find_each do |review| %>
+      <tr>
+        <td><%= review.stud_email %></td>
+        <td><%= review.prev_grader %></td>
+        <td><%= review.grader_rating %></td>
+        <td><%= review.recommend %></td>
+        <td><%= review.notes %></td>
+      </tr>
+  <% end %>
+  </table>
+<% else %>
+  <h2> You do not have any submitted reviews.</h2>
+<% end %>
+

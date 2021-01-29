@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<style type="text/css">
+  table {
+  border-collapse: collapse;
+  width: 60%;
+  }
+  th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid black;
+  }
+  tr:hover {background-color:#f5f5f5;}
+</style>
+<body>
+<h1 align="center">Course List</h1>
+<table align="center">
+  <tr>
+    <th>Section Number</th>
+    <th>Course Title</th>
+    <th>Semester</th>
+    <th>Instructor</th>
+    <th>Has Grader</th>
+    <th></th>
+  </tr>
+
+  <% @courses.each do |course| %>
+    <tr>
+      <td ><%= course.section_no %></td>
+      <td><%= course.course_title %></td>
+      <td><%= course.semester %></td>
+      <td><%= course.instructor %></td>
+      <td><%= course.grader %></td>
+      <td><%= link_to 'Details', course_path(course) %></td>
+      <td><%= link_to 'Edit', edit_course_path(course) %></td>
+      <td><%= link_to 'Delete', course_path(course),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+
+  <% end %>
+
+</table>
+
+<p align="center"><%= link_to 'Add New Course', new_course_path %></p>
+<br></br>
+</body>
+</html>
+<!-- <%= link_to 'Add New Course', new_course_path %> -->

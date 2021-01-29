@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Administration Overview</title>
+<!--    <link rel="stylesheet" href="admin_overview.css">-->
+  </head>
+
+  <body>
+    <h1>Administration Overview</h1>
+
+    <hr>
+
+    <button class = "back" onclick = "window.location.href='/admin_homepage/index.html'"> Back to Main </button>
+
+    <table class = "section_start">
+      <tr>
+        <th>Course Name</th>
+        <th>Course Number</th>
+        <th>Instructor</th>
+        <th>Semester</th>
+        <th>TA</th>
+      </tr>
+      <% @courses.each do |course| %>
+        <tr>
+          <td><%= course.course_title %></td>
+          <td ><%= course.section_no %></td>
+          <td><%= course.instructor %></td>
+          <td><%= course.semester %></td>
+          <select id = <%= "course." + course.section_no %>>
+            <!-- Instead of have manual options, just loop through the students and use an if to see if they should be added or not. -->
+            <option value="empty">Unassigned</option>
+            <option value="bill.87">Billy Bill</option>
+            <option value="mann.36">Harry Mann</option>
+            <option value="li.3259">Leah Li</option>
+            <option value="hippos.2">Charlotte Hippos</option>
+          </select>
+        </tr>
+      <% end %>
+    </table>
+    
+    <button class = "save" onclick = "execute save function"> Save </button>
+  </body>
+
+</html>
